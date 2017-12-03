@@ -1,6 +1,3 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 #include "user.h"
 #define USER_FILE "user.dat"
 user *first_user = NULL;
@@ -15,7 +12,7 @@ void add_user()
 		memset(new_user,0,sizeof(user));
 		new_user->next = NULL;
 
-		printf(">Ôö¼ÓÓÃ»§ÐÅÏ¢...\n");
+		printf(">å¢žåŠ ç”¨æˆ·ä¿¡æ¯...\n");
 		input_user(&(new_user->ui));
 
 		p = find_user(new_user->ui.username);
@@ -26,7 +23,7 @@ void add_user()
 			p->next = new_user;
 			break;
 		}
-		printf(">ÓÃ»§[%s]ÒÑ´æÔÚ¡£ÖØÐÂÊäÈëÂë£¿£¨y or n):",new_user->ui.username);
+		printf(">ç”¨æˆ·[%s]å·²å­˜åœ¨ã€‚é‡æ–°è¾“å…¥ç ï¼Ÿï¼ˆy or n):",new_user->ui.username);
 
 		getchar();
 			try_again = getchar();
@@ -48,19 +45,19 @@ void search_user()
 	user *p = NULL;
 	while(input_char == 'Y' || input_char == 'y')
 	{
-		printf(">²éÕÒÓÃ»§ÐÅÏ¢...\n");
-	    printf(">ÇëÊäÈëÓÃ»§Ãû£¨×î´ó³¤¶ÈÎª %d):",MAX_USERNAME);
+		printf(">æŸ¥æ‰¾ç”¨æˆ·ä¿¡æ¯...\n");
+	    printf(">è¯·è¾“å…¥ç”¨æˆ·åï¼ˆæœ€å¤§é•¿åº¦ä¸º %d):",MAX_USERNAME);
 	    scanf("%s",username);
 	    p = find_user(username);
 	    if (p == NULL)
 		{
-		printf(">Î´ÕÒµ½ÓÃ»§:%sµÄÐÅÏ¢¡£¼ÌÐø²éÕÒÂð£¿£¨yor n)",username);
+		printf(">æœªæ‰¾åˆ°ç”¨æˆ·:%sçš„ä¿¡æ¯ã€‚ç»§ç»­æŸ¥æ‰¾å—ï¼Ÿï¼ˆyor n)",username);
 		getchar();
 		input_char = getchar();
 		continue;
 		}
 	    show_user(&(p->ui));
-	    printf(">²éÕÒ³É¹¦£¡°´d/D¼üÉ¾³ý¸ÃÓÃ»§£¬°´u/U¼ü¸üÐÂ¸ÃÓÃ»§ÐÅÏ¢£¬°´ÆäËû¼ü·µ»Ø!");
+	    printf(">æŸ¥æ‰¾æˆåŠŸï¼æŒ‰d/Dé”®åˆ é™¤è¯¥ç”¨æˆ·ï¼ŒæŒ‰u/Ué”®æ›´æ–°è¯¥ç”¨æˆ·ä¿¡æ¯ï¼ŒæŒ‰å…¶ä»–é”®è¿”å›ž!");
 		getchar();
 	    input_char = getchar();
 	    if(input_char == 'd' || input_char == 'D')
@@ -82,7 +79,7 @@ void delete_user(user *p)
 {
 	char input_char = 'N';
 	user *previous = NULL;
-	printf(">È·¶¨ÒªÉ¾³ýÓÃ»§[%s]Âð£¿(y or n):",p->ui.username);
+	printf(">ç¡®å®šè¦åˆ é™¤ç”¨æˆ·[%s]å—ï¼Ÿ(y or n):",p->ui.username);
 	getchar();
 	input_char = getchar();
 	if (input_char == 'Y' || input_char =='y')
@@ -107,8 +104,8 @@ void update_user(user *p)
 		exist_p = find_user(new_p->username);
 		if(exist_p != NULL && exist_p != p)
 		{
-			printf(">ÓÃ»§[%s]ÒÑ´æÔÚ£¬ÇëÑ¡ÓÃÆäËûÓÃ»§Ãû¡£\n",exist_p->ui.username);
-			printf(">ÖØÐÂÊäÈëÂð£¿(y or n):");
+			printf(">ç”¨æˆ·[%s]å·²å­˜åœ¨ï¼Œè¯·é€‰ç”¨å…¶ä»–ç”¨æˆ·åã€‚\n",exist_p->ui.username);
+			printf(">é‡æ–°è¾“å…¥å—ï¼Ÿ(y or n):");
 			getchar();
 			input = getchar();
 		}
@@ -126,7 +123,7 @@ void update_user(user *p)
 void save_users()
 {
 	save_users_to_file();
-	printf(">±£´æ³É¹¦£¡°´ÈÎÒâ¼ü·µ»Ø...");
+	printf(">ä¿å­˜æˆåŠŸï¼æŒ‰ä»»æ„é”®è¿”å›ž...");
 	getchar();
 	getchar();
 }
@@ -211,24 +208,24 @@ USER_TYPE login()
 	user *p=NULL;
 	while(try_again='y'||try_again=='Y')
 	{
-		printf("ÇëÊäÈëÓÃ»§Ãû:");
+		printf("è¯·è¾“å…¥ç”¨æˆ·å:");
 		scanf("%s",username);
-		printf("ÇëÊäÈëÃÜÂë:");
+		printf("è¯·è¾“å…¥å¯†ç :");
 		scanf("%s",password);
 		p=find_user(username);
 		if(p==NULL)
 		{
-			printf("ÓÃ»§ÃûÊäÈë´íÎó");
+			printf("ç”¨æˆ·åè¾“å…¥é”™è¯¯");
 		}
 		else if(strcmp(p->ui.password,password) !=0)
 		{
-			printf("ÃÜÂëÊäÈë´íÎó");
+			printf("å¯†ç è¾“å…¥é”™è¯¯");
 		}
 		else
 		{
 			return p->ui.user_type;
 		}
-		printf(">ÖØÐÂÊäÈëÂð£¿?(y or n):");
+		printf(">é‡æ–°è¾“å…¥å—ï¼Ÿ?(y or n):");
 		getchar();
 		try_again=getchar();
 	}
@@ -287,9 +284,9 @@ user *get_previous_user(user *p)
 void show_user(user_info *info)
 {
 	printf("\n");
-	printf("ÓÃ»§Ãû:%s\n",info->username);
-	printf("ÃÜÂë:%S\n",info->password);
-	printf("ÓÃ»§ÀàÐÍ:%S\n",info->user_type==ADMIN?"admin":"user");
+	printf("ç”¨æˆ·å:%s\n",info->username);
+	printf("å¯†ç :%S\n",info->password);
+	printf("ç”¨æˆ·ç±»åž‹:%S\n",info->user_type==ADMIN?"admin":"user");
 	printf("\n");
 }
 
@@ -297,11 +294,11 @@ void show_user(user_info *info)
 
 void input_user(user_info *info)
 {
-	printf(">ÇëÊäÈëÓÃ»§Ãû(×î´ó³¤¶ÈÎª%d):",MAX_USERNAME);
+	printf(">è¯·è¾“å…¥ç”¨æˆ·å(æœ€å¤§é•¿åº¦ä¸º%d):",MAX_USERNAME);
 	scanf("%s",info->username);
-	printf(">ÇëÊäÈëÃÜÂë(×î´ó³¤¶ÈÎª%d):",MAX_PASSWORD);
+	printf(">è¯·è¾“å…¥å¯†ç (æœ€å¤§é•¿åº¦ä¸º%d):",MAX_PASSWORD);
 	scanf("%s",info->password);
-	printf(">ÇëÊäÈëÓÃ»§ÀàÐÍ(%dÊÇ¹ÜÀíÔ±£¬%dÊÇÆÕÍ¨ÓÃ»§)",ADMIN,USER);
+	printf(">è¯·è¾“å…¥ç”¨æˆ·ç±»åž‹(%dæ˜¯ç®¡ç†å‘˜ï¼Œ%dæ˜¯æ™®é€šç”¨æˆ·)",ADMIN,USER);
 	scanf("%d",&(info->user_type));
 }
 
@@ -326,4 +323,3 @@ user *find_user(char *name)
 	}
 	return NULL;
 }
-
