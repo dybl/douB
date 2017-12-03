@@ -1,6 +1,3 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 #include "book.h"
 #define BOOK_FILE "books.dat"
 book *first_book=NULL;
@@ -15,7 +12,7 @@ void add_book()
 		new_book = (book*)malloc(sizeof(book));
         memset(new_book, 0, sizeof(book));
         new_book->next=NULL;
-        printf(">ÐÂÔöÍ¼Êé¡­..\n");
+        printf(">新增图书…..\n");
         input_book(&(new_book->bi));
         p=get_last_book();
 	   if(p==NULL)
@@ -26,7 +23,7 @@ void add_book()
 	   {
 	   	p->next=new_book;
 	   }
-	   printf(">¼ÌÐøÌí¼ÓÍ¼ÊéÂð£¿(y or n):");
+	   printf(">继续添加图书吗？(y or n):");
 	   getchar();
 	   try_again=getchar();
 	}
@@ -42,7 +39,7 @@ void view_book()
 		count=0;
 		p=first_book;
         printf("+-----------------------------------------------------------------------------------+\n");
-        printf("|         ÊéÃû       |         ×÷Õß        |\n");
+        printf("|         书名       |         作者        |\n");
         printf("+-----------------------------------------------------------------------------------+\n");
         while(p!=NULL)
         {
@@ -52,7 +49,7 @@ void view_book()
             if(count==5)
             {
                 count=0;
-                printf(">ÏÔÊ¾ÏÂÒ»Ò³Âð£¿(y or n):");
+                printf(">显示下一页吗？(y or n):");
                 getchar();
                 input=getchar();
                 if(input != 'y' && input != 'Y')
@@ -62,7 +59,7 @@ void view_book()
             }
         p=p->next;
         }
-        printf(">ÔÙ´Îä¯ÀÀÍ¼ÊéÂð£¿(y or n):");
+        printf(">再次浏览图书吗？(y or n):");
         getchar();
         input = getchar();
     }
@@ -78,13 +75,13 @@ void search_book_by_name()
 	char input = 'Y';
 	int count=0;
 	int i=0;
-	printf(">²éÕÒÍ¼Êé¡­..\n");
+	printf(">查找图书…..\n");
 	while(input == 'Y' || input == 'y')
 	{
 		count=0;
 		p=first_book;
 		memset(s,0,MAX_BOOK_NAME);
-		printf(">ÇëÊäÈëÊéÃû£¨×î´ó³¤¶È%d£©:",MAX_BOOK_NAME);
+		printf(">请输入书名（最大长度%d）:",MAX_BOOK_NAME);
 		scanf("%s",s);
 		while(p != NULL)
 		{
@@ -97,13 +94,13 @@ void search_book_by_name()
 		}
 		if(count==0)
 		{
-			printf(">Ã»ÓÐÕÒµ½Í¼Êé%¡£¼ÌÐø²éÕÒÂð£¿(y or n):",s);
+			printf(">没有找到图书%。继续查找吗？(y or n):",s);
 			getchar();
 			input=getchar();
 			continue;
 		}
-		printf(">¹²ÕÒµ½%d±¾Í¼Êé¡­\n",count);
-		printf(">¼ÌÐø²éÕÒÂð£¿(y or n):");
+		printf(">共找到%d本图书…\n",count);
+		printf(">继续查找吗？(y or n):");
 		getchar();
 		input=getchar();
 	}
@@ -117,13 +114,13 @@ void search_book_by_author()
 	char input = 'Y';
 	int count = 0;
 	int i = 0;
-	printf(">²éÕÒÍ¼Êé...\n");
+	printf(">查找图书...\n");
 	while (input == 'Y' || input == 'y')
 	{
 		count = 0;
 		p = first_book; 
 		memset(s, 0, MAX_AUTHOR);
-		printf(">ÇëÊäÈë×÷Õß (×î´ó³¤¶ÈÎª %d):", MAX_AUTHOR);
+		printf(">请输入作者 (最大长度为 %d):", MAX_AUTHOR);
 		scanf("%s", s);
 		while(p != NULL)
 		{
@@ -136,13 +133,13 @@ void search_book_by_author()
 		}
 		if (count == 0)
 		{
-			printf(">Ã»ÓÐÕÒµ½×÷ÕßÎª %s µÄÍ¼Êé¡£¼ÌÐø²éÕÒÂð£¿(y or n):", s);
+			printf(">没有找到作者为 %s 的图书。继续查找吗？(y or n):", s);
 			getchar();
 			input = getchar();
 			continue;
 		}
-		printf(">¹²ÕÒµ½ %d ±¾Í¼Êé...\n", count);
-		printf(">¼ÌÐø²éÕÒÂð£¿(y or n):");
+		printf(">共找到 %d 本图书...\n", count);
+		printf(">继续查找吗？(y or n):");
 		getchar();
 		input = getchar();
 	}
@@ -155,13 +152,13 @@ void search_book_by_author()
 void search_book_by_publisher()
 {
 	book*p = NULL;
-	char s[MAX_PUBLISHER] = {0}; /*³ö°æÉçÐÅÏ¢*/
+	char s[MAX_PUBLISHER] = {0}; /*出版社信息*/
 	char input = 'Y';
 	int count = 0;
 	int i = 0;
 
 
-	printf(">²éÕÒÍ¼Êé...\n");
+	printf(">查找图书...\n");
 
 
 	while (input == 'Y' || input == 'y')
@@ -169,7 +166,7 @@ void search_book_by_publisher()
 		count = 0;
 		p = first_book;
 		memset(s,0,MAX_AUTHOR);
-		printf(">ÇëÊäÈë³ö°æÉç £¨×î´ó³¤¶ÈÎª %d):", MAX_PUBLISHER);
+		printf(">请输入出版社 （最大长度为 %d):", MAX_PUBLISHER);
 		scanf("%s", s);
 		while(p != NULL)
 		{
@@ -183,17 +180,17 @@ void search_book_by_publisher()
 
 		if (count == 0)
 		{
-			printf(">Ã»ÓÐÕÒµ½³ö°æÉçÎª %s µÄÍ¼Êé¡£¼ÌÐø²éÕÒÂð£¿(y or n):", s);
+			printf(">没有找到出版社为 %s 的图书。继续查找吗？(y or n):", s);
 			getchar();
 			input = getchar();
 			continue;
 
 
 		}
-		printf(">¹²ÕÒµ½ %d ±¾Í¼Êé...\n", count);
+		printf(">共找到 %d 本图书...\n", count);
 
 
-		printf(">¼ÌÐø²éÕÒÂð£¿(y or n):");
+		printf(">继续查找吗？(y or n):");
 		getchar();
 		input = getchar();
 	}
@@ -203,13 +200,13 @@ void search_book_by_publisher()
 void search_book_by_pubdate()
 {
 	book *p = NULL;
-	char s[MAX_DATE] = {0};/*³ö°æÈÕÆÚ*/
+	char s[MAX_DATE] = {0};/*出版日期*/
     char input = 'Y';
 	int count = 0;
 	int i =0;
 
 
-	printf(">²éÕÒÍ¼Êé...\n");
+	printf(">查找图书...\n");
 
 
 	while (input == 'Y' || input == 'y')
@@ -217,7 +214,7 @@ void search_book_by_pubdate()
 		count = 0;
 		p = first_book;
 		memset(s, 0, MAX_DATE);
-		printf(">ÇëÊäÈë³ö°æÈÕÆÚ (×î´ó³¤¶ÈÎª %d):", MAX_DATE);
+		printf(">请输入出版日期 (最大长度为 %d):", MAX_DATE);
 		scanf("%s", s);
 		while(p != NULL)
 		{
@@ -232,17 +229,17 @@ void search_book_by_pubdate()
 
 		if (count == 0)
 		{
-			printf(">Ã»ÓÐÕÒµ½³ö°æÉçÈÕÆÚÎª %s µÄÍ¼Êé.¼ÌÐø²éÕÒÂð£¿(y or n):", s);
+			printf(">没有找到出版社日期为 %s 的图书.继续查找吗？(y or n):", s);
 			getchar();
 		    input = getchar();
 			continue;
 		}
 
 
-		printf(">¹²ÕÒµ½ %d ±¾Í¼Êé...\n):");
+		printf(">共找到 %d 本图书...\n):");
 
 
-		printf(">¼ÌÐø²éÕÒÂð£¿(y or n):");
+		printf(">继续查找吗？(y or n):");
 		getchar();
 		input = getchar();
 	}
@@ -259,12 +256,12 @@ void search_book_by_isbn()
 
 	while(input == 'Y' || input == 'y')
 	{
-		printf(">²éÕÒÍ¼Êé...\n");
-		printf(">ÇëÊäÈëISBN (×î´ó³¤¶ÈÎª %d):", MAX_ISBN);
+		printf(">查找图书...\n");
+		printf(">请输入ISBN (最大长度为 %d):", MAX_ISBN);
 		scanf("%s", isbn);
-		p = first_book; /* pÖ¸ÏòµÚÒ»¸ö½Úµã */
+		p = first_book; /* p指向第一个节点 */
 		result = NULL;
-		/*ÔÚÍ¼ÊéÁ´±íÖÐ²éÕÒÊäÈëµÄISBNÊÇ·ñ´æÔÚ*/
+		/*在图书链表中查找输入的ISBN是否存在*/
 		while (p != NULL)
 		{
 			if (strcmp(p->bi.ISBN, isbn)== 0 )
@@ -276,12 +273,12 @@ void search_book_by_isbn()
 		}
 		if (result != NULL)
 		{
-			printf(">²éÕÒÍ¼Êé...\n");
-			show_book(&(result->bi)); /*µ÷ÓÃshow_bookÏÔÊ¾²éµ½µÄÍ¼ÊéÐÅÏ¢*/
+			printf(">查找图书...\n");
+			show_book(&(result->bi)); /*调用show_book显示查到的图书信息*/
 		}
 		else
 		{
-			printf(">¼ÌÐø²éÕÒÂð£¿(y or n)");
+			printf(">继续查找吗？(y or n)");
 			getchar();
 			input = getchar();
 		}
@@ -297,8 +294,8 @@ void delete_book()
 	book *result = NULL;
 	while(input == 'Y' || input == 'y')
 	{
-		printf(">É¾³ýÍ¼Êé...\n");
-		printf(">ÇëÊäÈëISBN (×î´ó³¤¶ÈÎª %d):",MAX_ISBN);
+		printf(">删除图书...\n");
+		printf(">请输入ISBN (最大长度为 %d):",MAX_ISBN);
 		scanf("%s",isbn);
 		p = first_book;
 		result = NULL;
@@ -314,7 +311,7 @@ void delete_book()
 		if(result != NULL)
 		{
 			show_book(&(result->bi));
-			printf(">È·ÈÏÉ¾³ýÂð?(y or n)");
+			printf(">确认删除吗?(y or n)");
 			getchar();
 			input = getchar();
 			if(input == 'y' || input == 'Y')
@@ -325,9 +322,9 @@ void delete_book()
 		}
 		else
 		{
-			printf(">Ã»ÓÐÕÒµ½ISBNÎª %sµÄÍ¼Êé.\n",isbn);
+			printf(">没有找到ISBN为 %s的图书.\n",isbn);
 		}
-		printf(">¼ÌÐøÉ¾³ýÆäËûÍ¼ÊéÂð?(y or n)");
+		printf(">继续删除其他图书吗?(y or n)");
 		getchar();
 		input = getchar();
 	}
@@ -336,7 +333,7 @@ void delete_book()
 void save_books()
 {
 	save_books_to_file();
-	printf(">±£´æ³É¹¦£¡ ");
+	printf(">保存成功！ ");
 	getchar();
 	getchar();
 }
@@ -363,7 +360,7 @@ void init_book()
 		fp = fopen(BOOK_FILE,"w");
 		if(fp == NULL)
 		{
-			printf("²»ÄÜ´´½¨ÎÄ¼þ£¬°´ÈÎÒâ¼üÍË³ö...");
+			printf("不能创建文件，按任意键退出...");
 			 getchar();
 			 exit(0);
 		}
@@ -465,30 +462,30 @@ int findstr(char *source,char *str)
 
 void input_book(book_info *info)
 {
-	printf(">ÇëÊäÈëÊéÃû(×î´ó³¤¶ÈÎª %d):",MAX_BOOK_NAME);
+	printf(">请输入书名(最大长度为 %d):",MAX_BOOK_NAME);
     scanf("%s",info->book_name);
-	printf(">ÇëÊäÈë×÷Õß(×î´ó³¤¶ÈÎª %d):",MAX_AUTHOR);
+	printf(">请输入作者(最大长度为 %d):",MAX_AUTHOR);
 	scanf("%s",info->author);
-	printf(">ÇëÊäÈë³ö°æÉç(×î´ó³¤¶ÈÎª %d):",MAX_PUBLISHER);
+	printf(">请输入出版社(最大长度为 %d):",MAX_PUBLISHER);
 	scanf("%s",info->publisher);
-	printf(">ÇëÊäÈë³ö°æÈÕÆÚ(×î´ó³¤¶ÈÎª %d):",MAX_DATE);
+	printf(">请输入出版日期(最大长度为 %d):",MAX_DATE);
 	scanf("%s",info->pub_date);
-	printf(">ÇëÊäÈëISBN(×î´ó³¤¶ÈÎª %d):",MAX_ISBN);
+	printf(">请输入ISBN(最大长度为 %d):",MAX_ISBN);
 	scanf("%s",info->ISBN);
-	printf(">ÇëÊäÈëÒ³Êý:");
+	printf(">请输入页数:");
 	scanf("%d",&(info->pages));
 }
 
 void show_book(book_info *info)
 {
 	printf("------------------------------\n");
-    printf("ÊéÃû:%s\n",info->book_name);
-	printf("×÷Õß:%s\n",info->author);
-	printf("³ö°æÉç:%s\n",info->publisher);
-	printf("³ö°æÈÕÆÚ:%s\n",info->pub_date);
+    printf("书名:%s\n",info->book_name);
+	printf("作者:%s\n",info->author);
+	printf("出版社:%s\n",info->publisher);
+	printf("出版日期:%s\n",info->pub_date);
 	printf("..............................\n");
 	printf("ISBN:%s\n",info->ISBN);
-	printf("Ò³Êý:%s\n",info->pages);
+	printf("页数:%s\n",info->pages);
 	printf("\n");
 }
 
@@ -519,7 +516,6 @@ book *get_previous_book(book *p)
 	}
 	return previous;
 }
-
 
 
 
