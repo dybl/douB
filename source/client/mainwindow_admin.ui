@@ -418,7 +418,7 @@ font: 25 10pt &quot;微软雅黑 Light&quot;;</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>24</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_main">
