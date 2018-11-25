@@ -279,3 +279,8 @@ ModelManifest.xml
 *.out
 *.app
 *.DS_Store
+
+# doc file
+*.pdf
+Docs/
+/Docs
