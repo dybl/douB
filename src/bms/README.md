@@ -1,6 +1,7 @@
 # 图书管理系统 BookManageSystem
 
-![](doc/5066495-e4ba4965def0caee.png)
+![](../../doc/5066495-e4ba4965def0caee.png)
+
 
 
 图书 | 管理员 | 读者
@@ -79,7 +80,7 @@ xxx	| 超期图书数 | xxx
   - 读者类别信息的设置
   - 图书类别的设置以及罚款和赔偿标准的设置、数据备份和数据恢复等处理.
 
-## 如何使用? How to use?
+## 如何构建? How to build?
 
 - Linux
 ```bash
