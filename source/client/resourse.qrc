@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>link_l.png</file>
+        <file>link_r.png</file>
+        <file>icon.ico</file>
+        <file>photo.png</file>
+        <file>login_back.jpg</file>
+    </qresource>
+</RCC>
