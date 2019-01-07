@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ReaderForm</class>
+ <widget class="QWidget" name="ReaderForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>802</width>
+    <height>469</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="reader_lab">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>10</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>17</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>读者</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="reader_tw">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>40</y>
+     <width>801</width>
+     <height>431</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>2</number>
+   </property>
+   <widget class="QWidget" name="tab_1">
+    <attribute name="title">
+     <string>图书检索</string>
+    </attribute>
+    <widget class="QPushButton" name="search_btn">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>80</y>
+       <width>91</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>图书检索</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="dis_all_btn">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>80</y>
+       <width>91</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>查看所有</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="bname_ckx">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>45</y>
+       <width>91</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>按书名：</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="bprint_ckx">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>45</y>
+       <width>97</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>按出版社：</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="bauthor_ckx">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>45</y>
+       <width>97</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>按作者：</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="bname_le">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>40</y>
+       <width>101</width>
+       <height>27</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="bprint_le">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>40</y>
+       <width>113</width>
+       <height>27</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="bauthor_le">
+     <property name="geometry">
+      <rect>
+       <x>650</x>
+       <y>40</y>
+       <width>131</width>
+       <height>27</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="reset_btn_1">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>80</y>
+       <width>91</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>重置信息</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line_1">
+     <property name="geometry">
+      <rect>
+       <x>35</x>
+       <y>110</y>
+       <width>761</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="locate_btn">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>80</y>
+       <width>81</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>定位</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="bno_lab">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>85</y>
+       <width>51</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>书号：</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="bno_cmx">
+     <property name="geometry">
+      <rect>
+       <x>590</x>
+       <y>80</y>
+       <width>91</width>
+       <height>27</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTableView" name="book_tv">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>130</y>
+       <width>751</width>
+       <height>221</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>370</y>
+       <width>101</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>2018 ©  dybl</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>图书借阅</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>361</width>
+       <height>241</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>图书列表</string>
+     </property>
+     <widget class="QTableView" name="borrow_tv">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>30</y>
+        <width>351</width>
+        <height>201</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>120</y>
+       <width>361</width>
+       <height>241</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>借阅列表</string>
+     </property>
+     <widget class="QTableWidget" name="borrow_tw">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>351</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>书名</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>作者</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>数量</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>出版社</string>
+       </property>
+      </column>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="add_btn">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>270</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>添加&gt;&gt;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="delete_btn">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>200</y>
+       <width>81</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>删除&lt;&lt;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="done_btn">
+     <property name="geometry">
+      <rect>
+       <x>640</x>
+       <y>60</y>
+       <width>101</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>完成</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="bnum_lab">
+     <property name="geometry">
+      <rect>
+       <x>261</x>
+       <y>65</y>
+       <width>45</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>数量：</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="bno_le">
+     <property name="geometry">
+      <rect>
+       <x>335</x>
+       <y>21</y>
+       <width>100</width>
+       <height>27</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="bno_lab_2">
+     <property name="geometry">
+      <rect>
+       <x>261</x>
+       <y>25</y>
+       <width>68</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>索书号：</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="bnum_le">
+     <property name="geometry">
+      <rect>
+       <x>335</x>
+       <y>60</y>
+       <width>100</width>
+       <height>27</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="reset_btn_2">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>60</y>
+       <width>101</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>重置</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="add_btn_2">
+     <property name="geometry">
+      <rect>
+       <x>640</x>
+       <y>20</y>
+       <width>99</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>添加</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>781</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget1">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>60</y>
+       <width>161</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>*密码：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="rkey_le"/>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget2">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>20</y>
+       <width>161</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="rno_lab">
+        <property name="text">
+         <string>*帐号：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="rno_le"/>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QPushButton" name="fresh_btn">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>20</y>
+       <width>99</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>刷新</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>370</y>
+       <width>101</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>2018 ©  dybl</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_3">
+    <attribute name="title">
+     <string>续借归还</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>510</x>
+       <y>80</y>
+       <width>231</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>图书续借</string>
+     </property>
+     <widget class="QLabel" name="con_b_date_lab">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>125</y>
+        <width>71</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>当前日期：</string>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="renew_de">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>120</y>
+        <width>131</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="displayFormat">
+       <string>yyyy-MM-dd</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="accept_btn">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>170</y>
+        <width>81</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>确认</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="cancel_btn">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>170</y>
+        <width>81</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>取消</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>40</y>
+        <width>214</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLabel" name="rno_lab_3">
+         <property name="text">
+          <string>读者号：</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="rno_le_2"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="layoutWidget4">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>80</y>
+        <width>214</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QLabel" name="bno_lab_3">
+         <property name="text">
+          <string>图书号：</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="bno_le_2"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>80</y>
+       <width>211</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>图书归还</string>
+     </property>
+     <widget class="QPushButton" name="accept_btn_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>170</y>
+        <width>81</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>确认</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="cancel_btn_2">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>170</y>
+        <width>81</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>取消</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget5">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>40</y>
+        <width>201</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <item>
+        <widget class="QLabel" name="rno_lab_2">
+         <property name="text">
+          <string>读者号：</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="rno_le_3"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="layoutWidget6">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>110</y>
+        <width>201</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <item>
+        <widget class="QLabel" name="bno_lab_4">
+         <property name="text">
+          <string>图书号：</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="bno_le_3"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="Line" name="line_7">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>80</y>
+       <width>20</width>
+       <height>241</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>370</y>
+       <width>101</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>2018 ©  dybl</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="quit_btn">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>20</y>
+     <width>99</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>退出登录</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
