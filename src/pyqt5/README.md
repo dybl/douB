@@ -1,8 +1,7 @@
 <h1 align="center">cuSys 客户管理系统</h1>
 
-
+![](https://img.shields.io/badge/cusys-project-ad2dec.svg)
 ![](https://img.shields.io/badge/pyqt5-mysql-0f9d58.svg)
-![](https://img.shields.io/badge/simple-project-ad2dec.svg)
 ![](https://img.shields.io/badge/licence-Apache2.0-ff69b4.svg)
 
 ## 简述：
@@ -84,6 +83,12 @@
 +-------+--------------+------+-----+---------+-------+
 ```
 <br>
+
+### 效果展示
+
+<img src="..\..\img\login.png">
+<img src="..\..\img\registry.png">
+<img src="..\..\img\im.png">
 
 ### 代码示例
 
