@@ -86,9 +86,9 @@
 
 ### 效果展示
 
-<img src="../../img/login.png">
-<img src="../../img/registry.png">
-<img src="../../img/im.png">
+<img src="img/login.png">
+<img src="img/registry.png">
+<img src="img/im.png">
 
 ### 代码示例
 
