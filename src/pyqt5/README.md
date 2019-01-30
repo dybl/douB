@@ -184,7 +184,7 @@ def initUI(self):
 ## License
 
 ```sh
-Copyright 2019 dybl
+Copyright [2018] [https:github.com/dybl]
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
