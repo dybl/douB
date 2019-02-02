@@ -4,13 +4,6 @@
 ![](https://img.shields.io/badge/author-dybl-ff69b4.svg)
 ![](https://img.shields.io/badge/upload-pass-0f9d58.svg)
 
-## Qt GUI 图形界面版本
-![](img/1.png)
-![](img/2.png)
-![](img/3.png)
-![](img/4.png)
-![](img/5.png)
-
 `lms => Library Managememt System`
 (即`图书馆管理系统`)
 
