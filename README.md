@@ -1,5 +1,4 @@
-# 图书管理系统 BookManageSystem
-
+# 图书馆管理系统 lms => Library Managememt System
 ![](https://img.shields.io/badge/license-Apache2.0-253bd8.svg)
 ![](https://img.shields.io/badge/author-dybl-ff69b4.svg)
 ![](https://img.shields.io/badge/upload-pass-0f9d58.svg)
@@ -11,13 +10,10 @@
 ![](img/4.png)
 ![](img/5.png)
 
-`lms => Library Managememt System`
-(即`图书馆管理系统`)
-
-### 简介:
+### 简介 intro
 lms是一个简单的图书馆管理系统，界面是基于qt开发的，用mysql存储数据，基本实现了用户登录注册，增删改查图书及用户等功能，
 
-### 开发环境:
+### 开发环境 environment
 - windows： 1803 64bit
 - macosx 10.13.3 64bit
 - Qt: 5.11.2
@@ -28,7 +24,7 @@ lms是一个简单的图书馆管理系统，界面是基于qt开发的，用mys
 
 > 在release里下载`lms.dmg`,自行选择合适的安装位置，本程序大概占用60mb的磁盘空间.
 
-### 使用前配置:
+### 使用前配置 config
 
 - 确保你本机上已经安装了MySQL，并且版本号5.5.x以后，截至目前最新的是5.7.24，当然你用5.0.x也许也能够运行，不过我没有测试过。
 
@@ -36,7 +32,7 @@ lms是一个简单的图书馆管理系统，界面是基于qt开发的，用mys
 
 - 没有安装的可以在mysql官网上免费下载最新的5.7.24-windows-社区版，32位或者64位的都行.如有疑惑，请自行百度
 
-### 数据库脚本导入:
+### 数据库脚本导入 import sql
 
 - 已经为mysql配置过环境变量的直接打开cmd或者powershell，输入以下命令即可
 
@@ -49,7 +45,7 @@ source <libsys安装目录>\doc\libsys.sql
 **导入过程出现问题，请根据报错自行排查**
 
 
-## License
+## License 许可
 
 ```sh
 Copyright [2018] [https:github.com/dybl]
