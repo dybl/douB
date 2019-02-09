@@ -1,0 +1,12 @@
+#Executable file
+*.app
+*.DS_Store
+
+*.exe
+*.msi
+
+# doc file
+*.pdf
+Docs/
+/Docs
+
