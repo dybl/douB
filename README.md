@@ -1,9 +1,10 @@
-# 图书馆管理系统 lms => Library Managememt System
+
 ![](https://img.shields.io/badge/license-Apache2.0-253bd8.svg)
 ![](https://img.shields.io/badge/author-dybl-ff69b4.svg)
 ![](https://img.shields.io/badge/upload-pass-0f9d58.svg)
 
-## Qt GUI 图形界面版本
+# 图书馆管理系统 lms => Library Managememt System
+
 ![](img/1.png)
 ![](img/2.png)
 ![](img/3.png)
